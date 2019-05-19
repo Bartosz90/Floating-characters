@@ -16,7 +16,7 @@ const startPositionY = (min, max) => {
 };
 const ul = document.querySelector('ul');
 const addLi = () => {
-    for (let i = 0; i <= 800; i++) {
+    for (let i = 0; i <= 300; i++) {
         const li = document.createElement('li');
         li.className = "li-character";
         ul.appendChild(li);
@@ -73,7 +73,7 @@ setInterval(changeCharacter, 300);
 
 const h1 = document.querySelector('.header h1');
 const h2 = document.querySelector('.header h2');
-const sentences = [`"lorem 1 lorem 1 lorem1"`, `"lorem2 lorem2 lorem2`, ` lorem3 lorem3 lorem3"`];
+const sentences = [`"Is this a test sentence?"`, `"I'm not sure...`, ` Yes it is!"`];
 let wordIndex = 0;
 let sentenceIndex = 0;
 const typing = () => {
@@ -111,4 +111,4 @@ typingH22 = () => {
         }
     }, 110);
 }
-setTimeout(typingH22, 10000);
+setTimeout(typingH22, 8000);
