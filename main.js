@@ -16,55 +16,59 @@ const startPositionY = (min, max) => {
 };
 const ul = document.querySelector('ul');
 const addLi = () => {
-    let elementsNumber;
-    window.innerWidth < 700 ? elementsNumber = 300 : elementsNumber = 600;
-    for (let i = 0; i <= elementsNumber; i++) {
-        const li = document.createElement('li');
-        li.className = "li-character";
-        li.textContent = characters[Math.floor(Math.random() * characters.length)];
-        ul.appendChild(li);
-        li.style.left = `${characterPositionX}%`;
-        li.style.bottom = `${startPositionY(-7,-30)}%`;
-        characterPositionX += 2;
-        if (characterPositionX >= 100) {
-            characterPositionX = 0;
-            characterPositionY -= 7;
-        }
-        if (characterPositionY <= -105)
-            li.style.animationDelay = '7s';
-        else if (characterPositionY <= -98)
-            li.style.animationDelay = '6.5s';
-        else if (characterPositionY <= -91)
-            li.style.animationDelay = '6s';
-        else if (characterPositionY <= -84)
-            li.style.animationDelay = '5.5s';
-        else if (characterPositionY <= -77)
-            li.style.animationDelay = '5s';
-        else if (characterPositionY <= -70)
-            li.style.animationDelay = '4.5s';
-        else if (characterPositionY <= -63)
-            li.style.animationDelay = '4s';
-        else if (characterPositionY <= -56)
-            li.style.animationDelay = '3.5s';
-        else if (characterPositionY <= -49)
-            li.style.animationDelay = '3s';
-        else if (characterPositionY <= -42)
-            li.style.animationDelay = '2.5s';
-        else if (characterPositionY <= -35)
-            li.style.animationDelay = '2s';
-        else if (characterPositionY <= -28)
-            li.style.animationDelay = '1.5s';
-        else if (characterPositionY <= -21)
-            li.style.animationDelay = '1s';
-        else if (characterPositionY <= -14)
-            li.style.animationDelay = '.5s';
+    // let elementsNumber;
+    // window.innerWidth < 700 ? elementsNumber = 300 : elementsNumber = 600;
+    // for (let i = 0; i <= elementsNumber; i++) {
+    const li = document.createElement('li');
+    li.className = "li-character";
+    li.textContent = characters[Math.floor(Math.random() * characters.length)];
+    ul.appendChild(li);
+    li.style.left = `${startPositionY(0,100)}%`;
+    setTimeout(() => {
+        ul.removeChild(li)
+    }, 5000);
+    // li.style.bottom = `${startPositionY(-7,-30)}%`;
+    // characterPositionX += 2;
+    //     if (characterPositionX >= 100) {
+    //         characterPositionX = 0;
+    //         characterPositionY -= 7;
+    //     }
+    //     if (characterPositionY <= -105)
+    //         li.style.animationDelay = '7s';
+    //     else if (characterPositionY <= -98)
+    //         li.style.animationDelay = '6.5s';
+    //     else if (characterPositionY <= -91)
+    //         li.style.animationDelay = '6s';
+    //     else if (characterPositionY <= -84)
+    //         li.style.animationDelay = '5.5s';
+    //     else if (characterPositionY <= -77)
+    //         li.style.animationDelay = '5s';
+    //     else if (characterPositionY <= -70)
+    //         li.style.animationDelay = '4.5s';
+    //     else if (characterPositionY <= -63)
+    //         li.style.animationDelay = '4s';
+    //     else if (characterPositionY <= -56)
+    //         li.style.animationDelay = '3.5s';
+    //     else if (characterPositionY <= -49)
+    //         li.style.animationDelay = '3s';
+    //     else if (characterPositionY <= -42)
+    //         li.style.animationDelay = '2.5s';
+    //     else if (characterPositionY <= -35)
+    //         li.style.animationDelay = '2s';
+    //     else if (characterPositionY <= -28)
+    //         li.style.animationDelay = '1.5s';
+    //     else if (characterPositionY <= -21)
+    //         li.style.animationDelay = '1s';
+    //     else if (characterPositionY <= -14)
+    //         li.style.animationDelay = '.5s';
 
-        if (characterPositionY <= (-ul.offsetHeight))
-            return;
-    }
+    //     if (characterPositionY <= (-ul.offsetHeight))
+    //         return;
+    // }
 
 }
-window.onload = addLi();
+// window.onload = addLi();
+setInterval(addLi, 50);
 const animatedElements = document.querySelectorAll('.li-character');
 const changeCharacter = () => {
     [...animatedElements].forEach(element => {
