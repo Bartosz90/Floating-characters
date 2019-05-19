@@ -73,7 +73,7 @@ setInterval(changeCharacter, 300);
 
 const h1 = document.querySelector('.header h1');
 const h2 = document.querySelector('.header h2');
-const sentences = [`"Czy beka jest maksymalna?"`, `"Dzisiaj jest tylko deluxe.`, ` Nieeee no, jest maksymalna :)"`];
+const sentences = [`"lorem 1 lorem 1 lorem1"`, `"lorem2 lorem2 lorem2`, ` lorem3 lorem3 lorem3"`];
 let wordIndex = 0;
 let sentenceIndex = 0;
 const typing = () => {
