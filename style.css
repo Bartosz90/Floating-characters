@@ -41,7 +41,7 @@ body {
     height: 10px;
     color: var(--orange);
     transition: .2s linear;
-    animation: floatUp 3s linear infinite;
+    animation: floatUp 5s linear infinite;
 }
 
 @keyframes floatUp {
@@ -50,8 +50,14 @@ body {
     }
 
     100% {
-        bottom: 40%;
+        bottom: 50%;
         opacity: 0;
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg)
     }
 }
 
@@ -81,7 +87,7 @@ body {
     color: var(--neonPink);
 }
 
-@media (orientation:portrait) {
+@media (max-width:700px) {
 
     .header h1,
     .header h2 {
@@ -94,5 +100,20 @@ body {
 
     .header h2 {
         top: 40%;
+    }
+
+    .li-character {
+        animation: floatUp 3s linear infinite;
+    }
+
+    @keyframes floatUp {
+        0% {
+            opacity: 0.9;
+        }
+
+        100% {
+            bottom: 40%;
+            opacity: 0;
+        }
     }
 }
