@@ -16,9 +16,12 @@ const startPositionY = (min, max) => {
 };
 const ul = document.querySelector('ul');
 const addLi = () => {
-    for (let i = 0; i <= 300; i++) {
+    let elementsNumber;
+    window.innerWidth < 700 ? elementsNumber = 300 : elementsNumber = 600;
+    for (let i = 0; i <= elementsNumber; i++) {
         const li = document.createElement('li');
         li.className = "li-character";
+        li.textContent = characters[Math.floor(Math.random() * characters.length)];
         ul.appendChild(li);
         li.style.left = `${characterPositionX}%`;
         li.style.bottom = `${startPositionY(-7,-30)}%`;
@@ -59,6 +62,7 @@ const addLi = () => {
         if (characterPositionY <= (-ul.offsetHeight))
             return;
     }
+
 }
 window.onload = addLi();
 const animatedElements = document.querySelectorAll('.li-character');
@@ -67,7 +71,7 @@ const changeCharacter = () => {
         element.textContent = characters[Math.floor(Math.random() * characters.length)];
     })
 }
-setInterval(changeCharacter, 300);
+// setInterval(changeCharacter, 200);
 
 //header typing effect
 
