@@ -41,7 +41,7 @@ body {
     height: 10px;
     color: var(--orange);
     transition: .2s linear;
-    animation: floatUp 7s linear infinite;
+    animation: floatUp 3s linear infinite;
 }
 
 @keyframes floatUp {
@@ -50,7 +50,7 @@ body {
     }
 
     100% {
-        bottom: 107%;
+        bottom: 40%;
         opacity: 0;
     }
 }
