@@ -35,13 +35,13 @@ body {
 
 .li-character {
     position: absolute;
-    bottom: 0;
+    bottom: -10%;
     left: 0;
     width: 10px;
     height: 10px;
     color: var(--orange);
     transition: .2s linear;
-    animation: floatUp 5s linear infinite;
+    animation: floatUp 5s linear;
 }
 
 @keyframes floatUp {
@@ -103,17 +103,16 @@ body {
     }
 
     .li-character {
-        animation: floatUp 3s linear infinite;
-    }
+        animation: floatUp 5s linear;
 
-    @keyframes floatUp {
-        0% {
-            opacity: 0.9;
-        }
+        @keyframes floatUp {
+            0% {
+                opacity: 0.9;
+            }
 
-        100% {
-            bottom: 40%;
-            opacity: 0;
+            100% {
+                bottom: 50%;
+                opacity: 0;
+            }
         }
     }
-}
