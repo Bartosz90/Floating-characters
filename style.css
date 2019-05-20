@@ -87,7 +87,7 @@ body {
     color: var(--neonPink);
 }
 
-@media (max-width:800px) {
+@media (max-width:1200px) {
 
     .header h1,
     .header h2 {
