@@ -84,9 +84,6 @@ body {
 }
 
 @media (max-width:1000px) {
-    .header {
-        height: calc(100vh - 56px);
-    }
 
     .header h1,
     .header h2 {
