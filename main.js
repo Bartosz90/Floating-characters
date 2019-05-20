@@ -29,7 +29,7 @@ const addLi = () => {
 }
 
 const charAmount = () => {
-    if (window.innerWidth < 700) return 100;
+    if (window.innerWidth < 800) return 100;
     else return 20;
 }
 const timer = setInterval(addLi, charAmount());
