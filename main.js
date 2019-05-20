@@ -1,4 +1,5 @@
 //Matrix animation
+
 const characters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '<', '>', '/', '?', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '|'];
 
 const createList = () => {
@@ -11,71 +12,27 @@ window.onload = createList();
 
 let characterPositionX = 0;
 let characterPositionY = -7;
-const startPositionY = (min, max) => {
+const startPositionX = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
 };
 const ul = document.querySelector('ul');
 const addLi = () => {
-    // let elementsNumber;
-    // window.innerWidth < 700 ? elementsNumber = 300 : elementsNumber = 600;
-    // for (let i = 0; i <= elementsNumber; i++) {
     const li = document.createElement('li');
     li.className = "li-character";
     li.textContent = characters[Math.floor(Math.random() * characters.length)];
     ul.appendChild(li);
-    li.style.left = `${startPositionY(0,100)}%`;
+    li.style.left = `${startPositionX(0,100)}%`;
+    li.style.transform = `scale(${(Math.random()*(1.5 - 1) +1).toFixed(1)}`
     setTimeout(() => {
         ul.removeChild(li)
     }, 5000);
-    // li.style.bottom = `${startPositionY(-7,-30)}%`;
-    // characterPositionX += 2;
-    //     if (characterPositionX >= 100) {
-    //         characterPositionX = 0;
-    //         characterPositionY -= 7;
-    //     }
-    //     if (characterPositionY <= -105)
-    //         li.style.animationDelay = '7s';
-    //     else if (characterPositionY <= -98)
-    //         li.style.animationDelay = '6.5s';
-    //     else if (characterPositionY <= -91)
-    //         li.style.animationDelay = '6s';
-    //     else if (characterPositionY <= -84)
-    //         li.style.animationDelay = '5.5s';
-    //     else if (characterPositionY <= -77)
-    //         li.style.animationDelay = '5s';
-    //     else if (characterPositionY <= -70)
-    //         li.style.animationDelay = '4.5s';
-    //     else if (characterPositionY <= -63)
-    //         li.style.animationDelay = '4s';
-    //     else if (characterPositionY <= -56)
-    //         li.style.animationDelay = '3.5s';
-    //     else if (characterPositionY <= -49)
-    //         li.style.animationDelay = '3s';
-    //     else if (characterPositionY <= -42)
-    //         li.style.animationDelay = '2.5s';
-    //     else if (characterPositionY <= -35)
-    //         li.style.animationDelay = '2s';
-    //     else if (characterPositionY <= -28)
-    //         li.style.animationDelay = '1.5s';
-    //     else if (characterPositionY <= -21)
-    //         li.style.animationDelay = '1s';
-    //     else if (characterPositionY <= -14)
-    //         li.style.animationDelay = '.5s';
-
-    //     if (characterPositionY <= (-ul.offsetHeight))
-    //         return;
-    // }
-
 }
-// window.onload = addLi();
-setInterval(addLi, 50);
-const animatedElements = document.querySelectorAll('.li-character');
-const changeCharacter = () => {
-    [...animatedElements].forEach(element => {
-        element.textContent = characters[Math.floor(Math.random() * characters.length)];
-    })
+
+const charAmount = () => {
+    if (window.innerWidth < 700) return 100;
+    else return 20;
 }
-// setInterval(changeCharacter, 200);
+const timer = setInterval(addLi, charAmount());
 
 //header typing effect
 
